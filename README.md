@@ -1,1 +1,2 @@
-# Mithril-toolbox\nA toolset for working with Mithril
+# Mithril-toolbox
+A toolset for working with Mithril
