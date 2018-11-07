@@ -1,0 +1,27 @@
+{
+  "name": "mithril-toolset",
+  "version": "0.0.1",
+  "description": "A toolset of Mithril tools and helpers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codefeathers/mithril-toolset.git"
+  },
+  "keywords": [
+    "Mithril",
+    "utils",
+    "tools"
+  ],
+  "author": "Muthu Kumar <@MKRhere> (https://mkr.pw)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codefeathers/mithril-toolset/issues"
+  },
+  "homepage": "https://github.com/codefeathers/mithril-toolset#readme",
+  "dependencies": {
+    "mithril": "^1.1.6"
+  }
+}

@@ -1,0 +1,13 @@
+dependencies:
+  mithril: 1.1.6
+packages:
+  /mithril/1.1.6:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-fWcUrQTCqu8M916rj1MFGlHaPh65rznPu6U/N2U9g81H89klDCIptSK5bnkNkC+jyi3sJIXjyGhSQjUnR8jzZA==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  mithril: ^1.1.6
