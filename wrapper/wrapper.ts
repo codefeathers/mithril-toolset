@@ -1,4 +1,4 @@
-import m = require('mithril');
+import m from 'mithril';
 import htmlElements from '../assets/htmlElements.json';
 import elementNames from '../assets/htmlElements';
 

@@ -1,5 +1,5 @@
 declare module 'mithril-node-render' {
-	import Mithril from 'mithril';
-	function render (m: Mithril.Vnode): Promise<string>;
+	import m from 'mithril';
+	function render (m: m.Vnode): Promise<string>;
 	export default render;
 }
