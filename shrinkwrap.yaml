@@ -1,9 +1,15 @@
 dependencies:
   mithril: 1.1.6
+devDependencies:
+  '@types/mithril': 1.1.13
   mithril-node-render: 2.3.1
 packages:
+  /@types/mithril/1.1.13:
+    dev: true
+    resolution:
+      integrity: sha512-JDdplDDsIHyJFzolSSaKheTyWt7G/TyF1MwKCYU4rucZQtfKigpLMGGB/t8F6FRqPCuVH88uxbE0EILdwCjvVg==
   /co/4.6.0:
-    dev: false
+    dev: true
     engines:
       iojs: '>= 1.0.0'
       node: '>= 0.12.0'
@@ -12,7 +18,7 @@ packages:
   /mithril-node-render/2.3.1:
     dependencies:
       co: 4.6.0
-    dev: false
+    dev: true
     peerDependencies:
       mithril: 1.1.6
     resolution:
@@ -26,5 +32,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@types/mithril': ^1.1.13
   mithril: ^1.1.6
   mithril-node-render: ^2.3.1
