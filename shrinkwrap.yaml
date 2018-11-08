@@ -1,6 +1,22 @@
 dependencies:
   mithril: 1.1.6
+  mithril-node-render: 2.3.1
 packages:
+  /co/4.6.0:
+    dev: false
+    engines:
+      iojs: '>= 1.0.0'
+      node: '>= 0.12.0'
+    resolution:
+      integrity: sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ=
+  /mithril-node-render/2.3.1:
+    dependencies:
+      co: 4.6.0
+    dev: false
+    peerDependencies:
+      mithril: 1.1.6
+    resolution:
+      integrity: sha512-WKM/s1+Xc45eYirvNlRYDJ1ZyY9FtzNTvcq18p0qlJ7c5Z2noCLgOb3aNhK0dtUAB+4+2xRCP5kkPLAnNDsXnQ==
   /mithril/1.1.6:
     dev: false
     hasBin: true
@@ -11,3 +27,4 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   mithril: ^1.1.6
+  mithril-node-render: ^2.3.1

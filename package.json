@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/codefeathers/mithril-toolset#readme",
   "dependencies": {
-    "mithril": "^1.1.6"
+    "mithril": "^1.1.6",
+    "mithril-node-render": "^2.3.1"
+  },
+  "devDependencies": {
   }
 }
