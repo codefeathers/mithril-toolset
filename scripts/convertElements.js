@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-/* Tiny util to take a newline separated
-	list of elements and convert it to a JSON list */
+/* Tiny util to take a newline separated list of elements
+	and convert it to a JSON list and a types file for TypeScript */
 const { readFile, writeFile } = require('fs').promises;
 const path = require('path');
 
@@ -12,12 +12,18 @@ const path = require('path');
 		{ encoding: 'utf8' }
 	);
 
-	const elements = txt.split('\n')
-		.map((element, index, arr) =>
-			'\t' + `"${element}"` + (index === arr.length - 1 ? '' : ',')
+	const elements = txt.split('\n').map(el => `"${el}"`);
+
+	const list = elements
+		.map((el, index, arr) =>
+			'\t' + el + (index === arr.length - 1 ? '' : ',')
 		);
 
-	const json = [ '[', ...elements, ']' ].join('\n');
+	const json = [ '[', ...list, ']' ].join('\n');
+
+	const types = 'type Elements = '
+		+ elements.join(' | ')
+		+ ';\nexport default Elements;';
 
 	await writeFile(
 		path.join(__dirname, '/../assets/htmlElements.json'),
@@ -26,5 +32,13 @@ const path = require('path');
 	);
 	
 	console.log('Done converting txt -> JSON');
+
+	await writeFile(
+		path.join(__dirname, '/../assets/htmlElements.ts'),
+		types,
+		{ encoding: 'utf8' }
+	);
+	
+	console.log('Done converting txt -> types');
 
 })();
