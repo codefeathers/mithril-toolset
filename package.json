@@ -1,9 +1,11 @@
 {
   "name": "mithril-toolset",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A toolset of Mithril tools and helpers",
   "main": "index.js",
   "scripts": {
+    "assets": "node ./scripts/convertElements",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,8 +27,10 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
-    "@types/node": "^10.12.3",
     "@types/mithril": "^1.1.13",
-    "mithril-node-render": "^2.3.1"
+    "@types/node": "^10.12.3",
+    "fs-extra": "^7.0.1",
+    "mithril-node-render": "^2.3.1",
+    "typescript": "^3.1.6"
   }
 }

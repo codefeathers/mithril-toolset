@@ -2,13 +2,10 @@ import m, { Vnode, Children, Attributes } from 'mithril';
 import elementNames from '../assets/htmlElements';
 
 /* Creates a virtual element (Vnode). */
-interface CurriedHyperScript {
+interface MithrilScript {
 	(...children: Children[]): Vnode<any, any>;
 	(attributes: Attributes, ...children: Children[]): Vnode<any, any>;
-}
-
-interface MithrilScript extends CurriedHyperScript {
-	[key: string]: MithrilScript
+	[key: string]: MithrilScript;
 }
 
 function createMithrilScript (selector: string): MithrilScript
@@ -18,7 +15,7 @@ function createMithrilScript (selector: string) {
 
 type Elements = { [name in elementNames]: MithrilScript }
 
-const createClassProxy = (h: CurriedHyperScript, name: any): any => new Proxy(h, {
+const createClassProxy = (m: MithrilScript, name: string): MithrilScript => new Proxy(m, {
 	get: (f, selector: string) => {
 		const isPureClass =
 			selector.split('.').length === 1
@@ -28,9 +25,7 @@ const createClassProxy = (h: CurriedHyperScript, name: any): any => new Proxy(h,
 	}
 });
 
-const elems = new Proxy({}, {
+export default new Proxy({}, {
 	get: (obj, name: string) =>
 		createClassProxy(createMithrilScript(name), name)
 }) as Elements;
-
-export default elems;
