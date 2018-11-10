@@ -2,12 +2,17 @@ dependencies:
   mithril: 1.1.6
 devDependencies:
   '@types/mithril': 1.1.13
+  '@types/node': 10.12.3
   mithril-node-render: 2.3.1
 packages:
   /@types/mithril/1.1.13:
     dev: true
     resolution:
       integrity: sha512-JDdplDDsIHyJFzolSSaKheTyWt7G/TyF1MwKCYU4rucZQtfKigpLMGGB/t8F6FRqPCuVH88uxbE0EILdwCjvVg==
+  /@types/node/10.12.3:
+    dev: true
+    resolution:
+      integrity: sha512-sfGmOtSMSbQ/AKG8V9xD1gmjquC9awIIZ/Kj309pHb2n3bcRAcGMQv5nJ6gCXZVsneGE4+ve8DXKRCsrg3TFzg==
   /co/4.6.0:
     dev: true
     engines:
@@ -33,5 +38,6 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/mithril': ^1.1.13
+  '@types/node': ^10.12.3
   mithril: ^1.1.6
   mithril-node-render: ^2.3.1

@@ -25,6 +25,7 @@
     "mithril": "^1.1.6"
   },
   "devDependencies": {
+    "@types/node": "^10.12.3",
     "@types/mithril": "^1.1.13",
     "mithril-node-render": "^2.3.1"
   }
