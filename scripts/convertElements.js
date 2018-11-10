@@ -2,7 +2,7 @@
 
 /* Tiny util to take a newline separated list of elements
 	and convert it to a JSON list and a types file for TypeScript */
-const { readFile, writeFile } = require('fs').promises;
+const { readFile, writeFile } = require('fs-extra');
 const path = require('path');
 
 (async function main () {
@@ -23,7 +23,7 @@ const path = require('path');
 
 	const types = 'type Elements = '
 		+ elements.join(' | ')
-		+ ';\nexport default Elements;';
+		+ ';\nexport default Elements;\n';
 
 	await writeFile(
 		path.join(__dirname, '/../assets/htmlElements.json'),
