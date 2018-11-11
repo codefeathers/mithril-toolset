@@ -4,10 +4,10 @@
   "description": "A toolset of Mithril tools and helpers",
   "main": "dist/index.js",
   "scripts": {
-    "assets": "node ./scripts/convertElements",
+    "assets": "node ./scripts/generateTypes",
     "build": "tsc",
-    "test": "node test",
-    "preversion": "pnpm run assets && pnpm run build && pnpm test"
+    "test": "pnpm run assets && pnpm run build && node test",
+    "preversion": "pnpm test"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,17 @@
     "url": "https://github.com/codefeathers/mithril-toolset/issues"
   },
   "homepage": "https://github.com/codefeathers/mithril-toolset#readme",
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "mithril": "^1.1.6"
   },
   "devDependencies": {
+    "mithril": "^1.1.6",
     "@types/mithril": "^1.1.13",
     "@types/node": "^10.12.3",
+    "axios": "^0.18.0",
     "fs-extra": "^7.0.1",
+    "jsdom": "^13.0.0",
     "mithril-node-render": "^2.3.1",
     "typescript": "^3.1.6"
   }
