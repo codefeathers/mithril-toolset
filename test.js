@@ -19,4 +19,6 @@ render(
 	)
 ).then(html => {
 	assert.equal(html, testHTML);
+}).then(() => {
+	console.log('> [info] Test passed!');
 }).catch(console.error);
