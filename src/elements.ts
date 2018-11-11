@@ -17,6 +17,7 @@ type Elements = { [name in elementNames]: MithrilScript }
 
 const createClassProxy = (m: MithrilScript, name: string): MithrilScript => new Proxy(m, {
 	get: (f, selector: string) => {
+		if (selector in f) return f[selector];
 		const isPureClass =
 			selector.split('.').length === 1
 			&& selector.split('#').length === 1;
