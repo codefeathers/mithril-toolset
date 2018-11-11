@@ -1,6 +1,6 @@
 {
   "name": "mithril-toolset",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A toolset of Mithril tools and helpers",
   "main": "dist/index.js",
   "scripts": {
