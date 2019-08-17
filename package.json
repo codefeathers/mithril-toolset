@@ -1,8 +1,8 @@
 {
 	"name": "mithril-toolset",
-	"version": "0.3.9",
+	"version": "0.3.10",
 	"description": "A toolset of Mithril tools and helpers",
-	"main": "dist",
+	"main": "dist/src",
 	"scripts": {
 		"assets": "node ./scripts/generateTypes",
 		"build": "rimraf dist && tsc",
