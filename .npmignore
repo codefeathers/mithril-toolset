@@ -1,7 +1,0 @@
-!dist
-node_modules
-assets
-src
-scripts
-index.ts
-test.js
