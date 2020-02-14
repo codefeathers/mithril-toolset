@@ -66,7 +66,7 @@ const tryCatch = <T extends Function>(f: T) => {
 
 const outDir = resolve(__dirname, "..", "docs");
 
-const bob = ({ watch = true }) => {
+const bob = ({ watch = false }: { watch?: boolean } = {}) => {
 	const build = () => (
 		console.log("Building src/markup..."),
 		tryCatch(async () => {

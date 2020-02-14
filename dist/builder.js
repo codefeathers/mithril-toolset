@@ -41,7 +41,7 @@ const tryCatch = (f) => {
     }
 };
 const outDir = path_1.resolve(__dirname, "..", "docs");
-const bob = ({ watch = true }) => {
+const bob = ({ watch = false } = {}) => {
     const build = () => (console.log("Building src/markup..."),
         tryCatch(async () => {
             const { pages, stylesheets } = getTemplates();
