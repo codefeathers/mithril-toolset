@@ -26,6 +26,7 @@ type Elements =
 	"del" |
 	"details" |
 	"dfn" |
+	"dialog" |
 	"div" |
 	"dl" |
 	"dt" |
