@@ -2,9 +2,13 @@
 
 import { writeFileSync } from "fs";
 import { resolve } from "path";
-import { rm, mkdir } from "shelljs";
 
+import { rm, mkdir } from "shelljs";
 import chokidar from "chokidar";
+
+import { EmotionCache } from "emotion";
+
+import generateStylesheets from "./generateStylesheets";
 
 declare global {
 	namespace NodeJS {
@@ -35,7 +39,7 @@ const invalidate = (
 
 type Templates = {
 	pages: [string, Vnode][];
-	stylesheets: [string, string][];
+	stylesheets: [string, EmotionCache][];
 };
 
 const getTemplates = () => {
@@ -65,7 +69,7 @@ const outDir = resolve(__dirname, "..", "docs");
 const bob = ({ watch = true }) => {
 	const build = () => (
 		console.log("Building src/markup..."),
-		tryCatch(() => {
+		tryCatch(async () => {
 			const { pages, stylesheets } = getTemplates();
 
 			// clean outDir
@@ -75,13 +79,13 @@ const bob = ({ watch = true }) => {
 			// create outDir for CSS
 			mkdir("-p", resolve(outDir, "css"));
 
-			pages.forEach(async ([path, html]) =>
-				writeFileSync(resolve(outDir, path), await render(html)),
-			);
+			for (const [path, rootNode] of pages) {
+				writeFileSync(resolve(outDir, path), await render(rootNode));
+			}
 
-			stylesheets.forEach(([path, css]) =>
-				writeFileSync(resolve(outDir, path), css),
-			);
+			for (const [path, css] of generateStylesheets(stylesheets)) {
+				writeFileSync(resolve(outDir, path), css);
+			}
 		})
 	);
 

@@ -28,7 +28,8 @@
 	},
 	"homepage": "https://github.com/codefeathers/mithril-toolset#readme",
 	"peerDependencies": {
-		"mithril": "latest"
+		"emotion": "*",
+		"mithril": "*"
 	},
 	"devDependencies": {
 		"@types/mithril": "^1.1.13",
@@ -36,9 +37,10 @@
 		"@types/shelljs": "^0.8.6",
 		"axios": "^0.18.0",
 		"chokidar": "^3.3.1",
+		"emotion": "*",
 		"fs-extra": "^7.0.1",
 		"jsdom": "^13.0.0",
-		"mithril": "latest",
+		"mithril": "*",
 		"mithril-node-render": "^2.3.2",
 		"rimraf": "^3.0.0",
 		"shelljs": "^0.8.3",

@@ -4,6 +4,12 @@ import { join, Memo } from "./utils";
 
 const SELECTOR = Symbol("@@mithril-toolset/selector");
 
+const o = (...args: any) => (f: Function, g: Function) => g(f(...args));
+
+const id = <T>(x: T) => x;
+
+const pipe = (...fs: Function[]) => (...args: any) => fs.reduce(o(...args), id);
+
 /* Creates a virtual element (Vnode). */
 interface MithrilScript {
 	(...children: Children[]): Vnode<any, any>;
@@ -38,8 +44,5 @@ const classProxy = (m: MithrilScript): MithrilScript =>
 
 export default new Proxy(
 	{},
-	{
-		get: (_, name: string) =>
-			memo.call((name: string) => classProxy(mithril(name)), name),
-	},
+	{ get: (_, name: string) => memo.call(pipe(mithril, classProxy), name) },
 ) as Elements;

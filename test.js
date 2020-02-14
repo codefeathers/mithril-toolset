@@ -8,7 +8,7 @@ const render = require("mithril-node-render");
 
 const {
 	elements: { html, head, body, div, h1, h2, p },
-} = require("./dist/src");
+} = require("./dist");
 
 const testHTML =
 	'<html><head></head><body class="container"><div class="hello world"><h1 id="main-title" class="title">Hello World</h1><h2>Subheading</h2><p>This is some text</p></div></body></html>';

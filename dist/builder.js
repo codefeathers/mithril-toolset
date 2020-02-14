@@ -8,6 +8,7 @@ const fs_1 = require("fs");
 const path_1 = require("path");
 const shelljs_1 = require("shelljs");
 const chokidar_1 = __importDefault(require("chokidar"));
+const generateStylesheets_1 = __importDefault(require("./generateStylesheets"));
 // Make Mithril happy
 if (!global.window) {
     global.window = global.document = global.requestAnimationFrame = undefined;
@@ -42,15 +43,19 @@ const tryCatch = (f) => {
 const outDir = path_1.resolve(__dirname, "..", "docs");
 const bob = ({ watch = true }) => {
     const build = () => (console.log("Building src/markup..."),
-        tryCatch(() => {
+        tryCatch(async () => {
             const { pages, stylesheets } = getTemplates();
             // clean outDir
             shelljs_1.rm("-rf", path_1.resolve(outDir, "css"));
             shelljs_1.rm(outDir + "/*.html");
             // create outDir for CSS
             shelljs_1.mkdir("-p", path_1.resolve(outDir, "css"));
-            pages.forEach(async ([path, html]) => fs_1.writeFileSync(path_1.resolve(outDir, path), await mithril_node_render_1.default(html)));
-            stylesheets.forEach(([path, css]) => fs_1.writeFileSync(path_1.resolve(outDir, path), css));
+            for (const [path, rootNode] of pages) {
+                fs_1.writeFileSync(path_1.resolve(outDir, path), await mithril_node_render_1.default(rootNode));
+            }
+            for (const [path, css] of generateStylesheets_1.default(stylesheets)) {
+                fs_1.writeFileSync(path_1.resolve(outDir, path), css);
+            }
         }));
     if (watch) {
         console.log("Watching src/markup...");
