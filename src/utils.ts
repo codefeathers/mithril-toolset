@@ -1,3 +1,5 @@
+import { createHash } from "crypto";
+
 export type Falsy = false | "" | 0 | 0n | undefined | null;
 
 export const join = (...segs: (string | Falsy)[]) => {
@@ -19,3 +21,21 @@ export const Memo = <T>() => {
 		},
 	};
 };
+
+export const convertToFilename = (name: string, ext: string) =>
+	`css/${name}.${ext}`;
+
+export const getFiles = (ext: string) => (name: string, CSS: string) => [
+	join(
+		name,
+		".",
+		convertToFilename(
+			createHash("md5")
+				.update(CSS)
+				.digest("hex")
+				.substr(0, 12),
+			ext,
+		),
+	),
+	CSS,
+];

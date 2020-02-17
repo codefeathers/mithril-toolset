@@ -1,6 +1,6 @@
 import m, { Vnode, Children, Attributes } from "mithril";
 import elementNames from "./htmlElements";
-import { join, Memo } from "./utils";
+import { join, Memo } from "../utils";
 
 const SELECTOR = Symbol("@@mithril-toolset/selector");
 
