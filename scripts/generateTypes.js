@@ -26,7 +26,7 @@ const path = require("path");
 						"> [info] Persisting to disk...",
 				);
 				await writeFile(
-					path.join(__dirname, "/../src/htmlElements.json"),
+					path.join(__dirname, "/../src/runtime/htmlElements.json"),
 					JSON.stringify(json, null, "\t"),
 					{ encoding: "utf8" },
 				);
@@ -40,9 +40,13 @@ const path = require("path");
 		elements.map(el => `\t"${el}"`).join(" |\n") +
 		";\n\nexport default Elements;\n";
 
-	await writeFile(path.join(__dirname, "/../src/htmlElements.ts"), types, {
-		encoding: "utf8",
-	});
+	await writeFile(
+		path.join(__dirname, "/../src/runtime/htmlElements.ts"),
+		types,
+		{
+			encoding: "utf8",
+		},
+	);
 
 	console.log("> [info] Done converting JSON -> types.");
 })();

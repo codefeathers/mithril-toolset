@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mithril_1 = __importDefault(require("mithril"));
-const utils_1 = require("./utils");
+const utils_1 = require("../utils");
 const SELECTOR = Symbol("@@mithril-toolset/selector");
 const o = (...args) => (f, g) => g(f(...args));
 const id = (x) => x;

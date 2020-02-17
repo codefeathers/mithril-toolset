@@ -1,3 +1,5 @@
+dependencies:
+  rollup: 1.31.1
 devDependencies:
   '@types/mithril': 1.1.17
   '@types/node': 10.17.15
@@ -95,6 +97,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
+  /@types/estree/0.0.42:
+    dev: false
+    resolution:
+      integrity: sha512-K1DPVvnBCPxzD+G51/cxVIoc2X8uUVl1zpJeE6iKcgHMj4+tbat5Xu4TjV7v2QSDbIeAfLi2hIk+u2+s0MlpUQ==
   /@types/events/3.0.0:
     dev: true
     resolution:
@@ -116,7 +122,6 @@ packages:
     resolution:
       integrity: sha512-U/wwKZT8hjstY2Q470bLMGVh/fjT2+SgBMzIILn0Z4nmgzzG6j+n18UOAxQ63aI8vXIOkQsbkAdbESt8+jIQdQ==
   /@types/node/10.17.15:
-    dev: true
     resolution:
       integrity: sha512-daFGV9GSs6USfPgxceDA8nlSe48XrVCJfDeYm7eokxq/ye7iuOH87hKXgMtEAVLFapkczbZsx868PMDT1Y0a6A==
   /@types/parse-json/4.0.0:
@@ -154,6 +159,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-/czfa8BwS88b9gWQVhc8eknunSA2DoJpJyTQkhheIf5E48u1N0R4q/YxxsAeqRrmK9TQ/uYfgLDfZo91UlANIA==
+  /acorn/7.1.0:
+    dev: false
+    engines:
+      node: '>=0.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-kL5CuoXA/dgxlBbVrflsflzQ3PAas7RYZB52NOm/6839iVYJgKMJ3cQJD+t2i5+qFa8h3MDpEOJiS64E8JLnSQ==
   /ajv/6.10.2:
     dependencies:
       fast-deep-equal: 2.0.1
@@ -1058,6 +1070,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-NDGVxTsjqfunkds7CqsOiEnxln4Bo7Nddl3XhS4pXg5OzwkLqJ971ZVAAnB+DDLnF76N+VnDEiBHaVV8I06SUg==
+  /rollup/1.31.1:
+    dependencies:
+      '@types/estree': 0.0.42
+      '@types/node': 10.17.15
+      acorn: 7.1.0
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-2JREN1YdrS/kpPzEd33ZjtuNbOuBC3ePfuZBdKEybvqcEcszW1ckyVqzcEiEe0nE8sqHK+pbJg+PsAgRJ8+1dg==
   /safe-buffer/5.1.2:
     dev: true
     resolution:
@@ -1305,5 +1326,6 @@ specifiers:
   mithril: '*'
   mithril-node-render: ^2.3.2
   rimraf: ^3.0.0
+  rollup: ^1.31.1
   shelljs: ^0.8.3
   typescript: ^3.1.6
