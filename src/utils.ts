@@ -2,6 +2,13 @@ import { createHash } from "crypto";
 
 export type Falsy = false | "" | 0 | 0n | undefined | null;
 
+const o = (f: Function, g: Function) => (...args: any) => g(f(...args));
+
+export const id = <T>(x: T) => x;
+
+export const pipe = (...fs: Function[]) => (...args: any) =>
+	fs.reduce(o, id)(...args);
+
 export const join = (...segs: (string | Falsy)[]) => {
 	let ret = "";
 	for (const seg of segs) {

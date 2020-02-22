@@ -13,6 +13,7 @@ interface MithrilScript {
 declare type Elements = {
     [name in elementNames]: MithrilScript;
 };
+declare function MithrilScript(selector: string): MithrilScript;
 export declare const maybe: (x: string | false | 0 | 0n | null | undefined) => string | typeof False;
 export declare const elements: Elements;
 export {};

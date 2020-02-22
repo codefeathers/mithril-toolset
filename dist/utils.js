@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const crypto_1 = require("crypto");
+const o = (f, g) => (...args) => g(f(...args));
+exports.id = (x) => x;
+exports.pipe = (...fs) => (...args) => fs.reduce(o, exports.id)(...args);
 exports.join = (...segs) => {
     let ret = "";
     for (const seg of segs) {

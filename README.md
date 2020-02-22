@@ -2,7 +2,7 @@
 
 Mithril toolset is a collection of utils and extensions I've written to the amazing [Mithril](https://github.com/MithrilJS/mithril.js) UI library.
 
-At the moment, it contains a single export, `elements`, which is a neater syntax to Mithril. I'll demonstrate below:
+It's better when I demonstrate it:
 
 ```JavaScript
 // Destructuring to get the elements we need
@@ -30,6 +30,14 @@ const { maybe, elements: { div } } = require("mithril-toolset");
 const component = hidden =>
       div[maybe(hidden && ".hide")](
         "If hidden is truthy, the class 'hide' is added to this div"))));
+```
+
+Attempting to use an empty selector returns the same component (although a copy to avoid reference sharing).
+
+```JavaScript
+div[""] // identical to div
+
+div[""] === div[""] // false. Every invocation creates a new reference, similar to Symbol
 ```
 
 `mithril-toolset` has full TypeScript support. Even if you don't use TS, it helps with VSCode's IntelliSense.
