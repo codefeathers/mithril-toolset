@@ -2,9 +2,9 @@
 declare global {
     namespace NodeJS {
         interface Global {
-            window: undefined;
-            document: undefined;
-            requestAnimationFrame: undefined;
+            window: any;
+            document: any;
+            requestAnimationFrame: any;
         }
     }
 }

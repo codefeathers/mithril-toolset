@@ -1,6 +1,6 @@
 {
 	"name": "mithril-toolset",
-	"version": "0.3.10",
+	"version": "0.4.0",
 	"description": "A toolset of Mithril tools and helpers",
 	"main": "dist/src",
 	"scripts": {
@@ -32,6 +32,7 @@
 		"mithril": "*"
 	},
 	"devDependencies": {
+		"@types/htmlparser2": "^3.10.1",
 		"@types/mithril": "^1.1.13",
 		"@types/node": "^10.17.15",
 		"@types/shelljs": "^0.8.6",
@@ -47,6 +48,7 @@
 		"typescript": "^3.1.6"
 	},
 	"dependencies": {
+		"htmlparser2": "^4.0.0",
 		"rollup": "^1.31.1"
 	}
 }

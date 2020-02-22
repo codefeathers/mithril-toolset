@@ -6,9 +6,9 @@ At the moment, it contains a single export, `elements`, which is a neater syntax
 
 ```JavaScript
 // Destructuring to get the elements we need
-const { html, head, body, h1, h2, div, p } = require('mithril-toolset').elements;
-// Some fancy serverside rendering just to show you
-const render = require('mithril-node-render');
+const { elements: { html, head, body, h1, h2, div, p } } = require("mithril-toolset");
+// fancy serverside rendering for an example
+const render = require("mithril-node-render");
 
 render(
   html(
@@ -19,9 +19,21 @@ render(
           h1("A neat heading"),
           h2("A subheading"),
           p("Should I also do some Lorem Ipsum?")))))
-).then(console.log)
+).then(console.log);
 ```
 
-Keep in mind that you're not looking at a template engine, you're not looking at some transpiled garbage like JSX. These are purely JavaScript functions. You can pass these functions around, you can split them into components, or whatever it is that you do with regular functions. They interop with Mithril just fine (psst... That's because they __are__ just Mithril wrappers).
+If you want to use optional classes, mithril-toolset 0.4 adds support for a `maybe`.
+
+```JavaScript
+const { maybe, elements: { div } } = require("mithril-toolset");
+
+const component = hidden =>
+      div[maybe(hidden && ".hide")](
+        "If hidden is truthy, the class 'hide' is added to this div"))));
+```
+
+`mithril-toolset` has full TypeScript support. Even if you don't use TS, it helps with VSCode's IntelliSense.
+
+`mithril-toolset`, like mithril itself, does not require any transpilation. Unlike JSX, t's fully valid JavaScript that you can use in runtime directly. You can pass these functions around, you can split them into components, or whatever it is that you do with regular functions.
 
 More stuff will make it to this toolset as they come along. Have fun Mithril-ing!
