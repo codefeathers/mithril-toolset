@@ -1,3 +1,5 @@
+### ⚠️ This project is abandoned! As a continuation of this library, we built [hyperactive⚡️](https://github.com/feathers-studio/hyperactive), a new reactive UI library. Go check that out!
+
 # mithril-toolset
 
 Mithril toolset is a collection of utils and extensions I've written to the amazing [Mithril](https://github.com/MithrilJS/mithril.js) UI library.
